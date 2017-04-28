@@ -17,6 +17,8 @@ import io.netty.handler.logging.LoggingHandler;
 /**
  * @author 穆书伟
  * @description Netty权威指南  - -定长解码器的应用
+ *
+ * @date 2017/4/28
  */
 public class EchoServer {
     public void bind(int port) throws Exception{
