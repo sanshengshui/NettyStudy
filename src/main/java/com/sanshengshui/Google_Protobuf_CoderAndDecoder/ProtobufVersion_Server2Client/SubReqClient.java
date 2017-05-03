@@ -17,6 +17,7 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
  * @author 穆书伟
  * @description Netty权威指南--Google Protobuf编解码
  * @date 2017/5/3 22:19
+ * 错误类型是：Protocol message contained an invalid tag (zero).
  */
 
 public class SubReqClient {
