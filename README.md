@@ -41,5 +41,47 @@ Channel的四个状态:
 (2)ChannelRegistered        Channel已经被注册到了EventLoop
 (3)ChannelActive            Channel处于活动状态（已经连接到它的远程节点)。它现在可以接受和发送数据了
 (4)ChannelInactive          Channel没有连接到远程节点
-
+Channel的生命周期是:
+ChannelRegistered- - ->ChannelActive- ->ChannelInactive- ->ChannelUnregistered
 ```
+6.1.2ChannelHandler的生命周期
+<br/>
+在ChannelHandler被添加到ChannelPipeline中或者被从ChannelPipeline中移除时会调用这些操作。这些方法中的每一个都接受一个
+<br/>
+ChannelHandlerContext参数。
+<br/>
+ChannelHandler的生命周期方法
+```
+      类型                            描述
+(1)handlerAdded                    当把ChannelHandler添加到ChannelPipeline中时被调用
+(2)handlerRemoved                  当从ChannelPipeLine中移除ChannelHandler时被调用
+(3)exceptionCaught                 当处理过程中在ChannelPipeLine中有错误产生时被调用
+Netty定义了下面2个重要的ChannelHandler子接口:
+>+< ChannelInboundHandler - - -处理入站数据以及各种状态变化；
+>+< ChannelOutboundHandler - - -处理出站数据并且允许拦截所有的操作。
+```
+6.1.3 ChannelInboundHandler接口
+<br/>
+6.1.4 ChannelOutboundHandler接口
+<br/>
+6.1.5 ChannelHandler适配器
+<br/>
+6.1.6 资源管理
+```
+  每当通过调用ChannelInboundHandler.channelRead()或者ChannelOutboundHandler.write()方法来处理数据时，你都需要确保没有任何的资源泄露
+。你可能还记得在前面的章节中所提到的，Netty使用引用计数来处理池化的ByteBuf。所以在完全使用完某个ByteBuf后,调整其引用计数是很重要的。
+Netty提供了class ResourceLeakDetector,它将对你应用程序的缓冲区分配做大约1%的采样来检测内存泄漏。相关的开销是非常小的。
+  如果检测到了内存泄漏，将会产生类似于下面的日志信息:
+详情请看p75  Netty in Action
+泄露检测级别 
+       级别                  描述
+(1)  DISABLED           禁用泄露检测。只有在详尽的测试之后才应设置为这个值
+(2)  SIMPLE             使用1%的默认采样率检测并报告任何发现的泄露。这是默认级别，适合绝大部分的情况
+(3)  ADVANCED           使用默认的采样率，报告所发现的任何的泄露以及相应的消息被访问的位置
+(4)  PARANOID           类似于ADVANCED,但是其将会对每次(对消息的)访问都进行采样。这对性能将会有很大的影响，应该只在调试阶段使用
+
+泄露检测级别可以通过将下面的Java系统属性设置为表中的一个值来定义:
+java -Dio.netty.leakDetectionLevel=ADVANCED
+```
+
+
