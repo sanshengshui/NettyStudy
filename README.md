@@ -28,4 +28,18 @@ Netty的数据处理API通过倆个组件暴露- -abstract class ByteBuf和inter
 (7)支持引用计数;
 (8)支持池化。
 ```
+第6章 ChannelHandler和ChannelPipeline
+<br/>
+6.1 ChannelHandler家族
+<br/>
+6.1.1 Channel的生命周期
+<br/>
+Channel的四个状态:
+```
+状态                        描述
+(1)ChannelUnregistered      Channel已经被创建,但还未注册到EventLoop
+(2)ChannelRegistered        Channel已经被注册到了EventLoop
+(3)ChannelActive            Channel处于活动状态（已经连接到它的远程节点)。它现在可以接受和发送数据了
+(4)ChannelInactive          Channel没有连接到远程节点
 
+```
