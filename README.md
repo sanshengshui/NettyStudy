@@ -83,5 +83,19 @@ Netty提供了class ResourceLeakDetector,它将对你应用程序的缓冲区分
 泄露检测级别可以通过将下面的Java系统属性设置为表中的一个值来定义:
 java -Dio.netty.leakDetectionLevel=ADVANCED
 ```
-
-
+6.2 ChannelPipeLine接口
+```
+  每一个新创建的Channel都将会被分配一个新的ChannelPipeline。这项关联是永久性的;Channel既不能
+附加另外一个ChannelPipeline,也不能分离其当前的。在Netty组件的生命周期中，这是一项固定的操作，不需要
+开发人员的任何干预。
+```
+6.3 ChannelHandlerContext接口
+```
+  ChannelHandlerContext代表了ChannelHandler和ChannelPipeline之间的关联，每当有ChannelHandler
+添加到ChannelPipeline中时，都会创建ChannelHandlerContext。ChannelHandlerContext的主要功能是管理
+它所关联的ChannelHandler和在同一个ChannelPipeline中的其他ChannelHandler之间的交互。
+  ChannelHandlerContext有很多的方法，其中一些方法也存在于Channel和ChannelPipeline本身上，但是有一点重要的不同。
+如果调用Channel或者ChannelPipeline上的这些方法，它们将沿着整个ChannelPipeline进行传播。而调用位于ChannelHandler
+Context上的相同方法，则将从当前所关联的ChannelHandler开始，并且只会传播给位于该ChannelPipeline中的下一个能够处理
+该事件的ChannelHandler。
+```
