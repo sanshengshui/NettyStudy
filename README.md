@@ -99,3 +99,21 @@ java -Dio.netty.leakDetectionLevel=ADVANCED
 Context上的相同方法，则将从当前所关联的ChannelHandler开始，并且只会传播给位于该ChannelPipeline中的下一个能够处理
 该事件的ChannelHandler。
 ```
+解码器
+- 将字节解码为消息---ByteToMessageDecoder和ReplayingDecoder;
+- 将一种消息类型解码为另一种---MessageToMessageDecoder。
+<br />
+将字节编码为消息(或者另一个字节序列)是一项如此常见的任务。
+```
+   方法                                          描述
+decode(ChannelHandlerContext ctx,            这是你必须实现的唯一抽象方法。decode()方法被调用时将会传入一个包含了传入数据的ByteBUf,
+ByteBuf in,List<Object> out)                 以及一个用来添加解码信息的List。对这个方法的调用将会重复进行，直到确定没有新的元素被添加到该
+                                             List,或者该ByteBuf中没有更多可读取的字节时为止。然后，如果该List不为空，那么它的内容将会被
+                                             传递给ChannelPipeline中的下一个ChannelInboundHandler
+
+
+decodeLast(                                  Netty提供的这个默认实现只是简单地调用了decode()方法。当Channel的状态变为非活动时，这个
+ChannelHandlerContext ctx,                   方法将会被调用一次。可以重写该方法以提供特殊的处理
+ByteBuf in,
+List<Object> out)                                             
+```
