@@ -120,3 +120,28 @@ ByteBuf in,
 List<Object> out)    
                                          
 ```
+编码器
+- 抽象类MessageToByteEncoder
+- 抽象类MessageToMessageEncoder
+<hr/>
+
+10.4抽象的编解码器类
+<br/>
+抽象类ByteToMessageCodec
+
+```
+  让我们来研究这样的一个场景：我们需要将字节解码为某种形式的消息，可能是POJO，随后再次对它进行编码。
+ByteToMessageCodec将为我们处理好这一切，因为它结合了ByteToMessageDecoder以及它的逆向--
+MessageToByteEncoder。
+   任何的请求/响应协议都可以作为使用ByteToMessageCodec的理想选择。例如，在某个SMTP的实现中，
+编解码器将读取传入字节，并将它们解码为一个自定义的消息类型，如smtpRequest.在接受端，当一个响应被创建
+时，将会产生一个smtpResponse,其将被编码回字节以便进行传输。
+```
+抽象类MessageToMessageCodec
+
+```
+  你看到了一个扩展了MessageToMessageEncoder以将一种消息格式转换为另外一种消息格式的例子。通过
+使用MessageToMessageCodec，我们可以在一个单一的类中实现该转换的往返过程。MessageToMessageCodec
+是一个参数化的类，定义如下:
+public abstract class MessageToMessageCodec<INBOUND_IN,OUTBOUND_IN>
+```
