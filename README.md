@@ -145,3 +145,17 @@ MessageToByteEncoder。
 是一个参数化的类，定义如下:
 public abstract class MessageToMessageCodec<INBOUND_IN,OUTBOUND_IN>
 ```
+
+CombinedChannelDuplexHandler类
+
+```
+  结合一个解码器和编码器可能会对可重用性造成影响。但是，有一种方法既能够避免这种惩罚，又不会牺牲将一个解码器和一个编码器作为一个
+单元的单元部署所带来的便利性。CombinedChannelDuplexHandler提供了这个解决方案,其声明为:
+ public class CombinedChannelDuplexHandler
+ <I extends ChannelInboundHandler,O extends ChannelOutboundHandler>
+```
+第7章 EventLoop和线程模型
+- 线程模型概述
+- 事件循环的概念和是西安
+- 任务调度
+- 实现细节
