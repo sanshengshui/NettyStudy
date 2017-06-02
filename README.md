@@ -98,6 +98,38 @@ java -Dio.netty.leakDetectionLevel=ADVANCED
 如果调用Channel或者ChannelPipeline上的这些方法，它们将沿着整个ChannelPipeline进行传播。而调用位于ChannelHandler
 Context上的相同方法，则将从当前所关联的ChannelHandler开始，并且只会传播给位于该ChannelPipeline中的下一个能够处理
 该事件的ChannelHandler。
+  对ChannelHandlerContext　API进行了总结
+     方法名称                           描述
+alloc                             返回和这个实例相关联的Channel所配置的ByteBufAllocator
+bind                              绑定到给定的SocketAddress,并返回ChannelFuture
+channel                           返回绑定到这个实例的Channel
+close                             关闭Channel,并返回ChannelFuture
+connect                           连接给定的SocketAddress,并返回ChannelFuture
+deregister                        从之前分配的EventExecutor注销，并返回ChannelFuture
+disconnect                        从远程节点断开，并返回ChannelFuture
+executor                          返回调度事件的EventExecutor
+fireChannelActive                 触发对下一个ChannelInboundHandler上的channelActive()(已连接)的调用
+fireChannelInactive               触发对下一个ChannelInboundHandler上的channelInactive()(已关闭)的调用
+fireChannelRead                   触发对下一个ChannelInboundHandler上的channelRead()(已接受的消息)的调用
+fireChannelReadComplete           触发对下一个ChannelInboundHandler上的channelReadComplete()方法的调用
+fireChannelRegistered             触发对下一个ChannelInboundHandler上的fireChannelRegistered()方法的调用
+fireChannelUnregistered           触发对下一个ChannelInboundHandler上的fireChannelUnregistered()方法的调用
+fireChannelWritabilityChanged     触发对下一个ChannelInboundHandler上的fireChannelWritabilityChanged()方法的调用
+fireExceptionCaught               触发对下一个ChannelInboundHandler上的fireExceptionCaught(Throwable)方法的调用
+fireUserEventTriggered            触发对下一个ChannelInboundHandler上的fireUserEventTriggered(Object evt)方法的调用
+handler                           返回绑定到这个实例的ChannelHandler
+isRemoved                         如果所关联的ChannelHandler已经被从ChannelPipeline中移除则返回true
+name                              返回这个实例的唯一名称
+pipeline                          返回这个实例所关联的ChannelPipeline
+read                              将数据从Channel读取到第一个入站缓冲区;如果读取成功则触发一个channelRead事件，并(在最后一个消息被读取完成后)
+                                  通知ChannelInboundHandler的channelReadComplete(channelReadComplete)(ChannelHandlerContext)方法
+write                             通过这个实例写入消息并经过ChannelPipeline
+writeAndFlush                     通过这个实例写入并冲刷并经过ChannelPipeline
+
+当使用ChannelHandlerContext的API的时候，请牢记以下2点：
+  ChannelHandlerContext 和 ChannelHandler之间的关联(绑定)是永远不会改变的，所以缓存对它的应用是安全的;
+  如同我们在本节开头所解释的一样，相对于其他类的同名方法，ChannelHandlerContext的开头将产生更短的事件流，
+应该尽可能地利用这个特性来获得最大的性能。
 ```
 解码器
 - 将字节解码为消息---ByteToMessageDecoder和ReplayingDecoder;
@@ -156,6 +188,6 @@ CombinedChannelDuplexHandler类
 ```
 第7章 EventLoop和线程模型
 - 线程模型概述
-- 事件循环的概念和是西安
+- 事件循环的概念和实现
 - 任务调度
 - 实现细节
