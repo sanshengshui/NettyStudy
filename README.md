@@ -131,6 +131,17 @@ writeAndFlush                     通过这个实例写入并冲刷并经过Chan
   如同我们在本节开头所解释的一样，相对于其他类的同名方法，ChannelHandlerContext的开头将产生更短的事件流，
 应该尽可能地利用这个特性来获得最大的性能。
 ```
+ChannelHandler和ChannelHandlerContext的高级用法
+<br />
+描述：
+
+```
+  为什么会想要从ChannelPipeline中的某个特定点开始传播事件呢?
+为了减少将事件传经对它不感兴趣的ChannelHandler所带来
+```
+
+
+
 解码器
 - 将字节解码为消息---ByteToMessageDecoder和ReplayingDecoder;
 - 将一种消息类型解码为另一种---MessageToMessageDecoder。
