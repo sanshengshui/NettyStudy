@@ -137,7 +137,10 @@ ChannelHandler和ChannelHandlerContext的高级用法
 
 ```
   为什么会想要从ChannelPipeline中的某个特定点开始传播事件呢?
-为了减少将事件传经对它不感兴趣的ChannelHandler所带来
+为了减少将事件传经对它不感兴趣的ChannelHandler所带来的开销。
+为了避免将事件传经那些可能会对它感兴趣的ChannelHandler。
+  要想调用从某个特定的ChannelHandler开始的处理过程，必须获取到在(ChannelPipeline)该ChannelHandler之前的ChannelHandler所关联的
+ChannelHandelerContext。这个ChannelHandlerContext将调用和它所关联的ChannelHandler之后的ChannelHandler
 ```
 
 
@@ -170,7 +173,7 @@ List<Object> out)
 
 10.4抽象的编解码器类
 <br/>
-抽象类ByteToMessageCodec
+抽象类ByteToMessageCodec                     
 
 ```
   让我们来研究这样的一个场景：我们需要将字节解码为某种形式的消息，可能是POJO，随后再次对它进行编码。
