@@ -141,8 +141,40 @@ ChannelHandler和ChannelHandlerContext的高级用法
 为了避免将事件传经那些可能会对它感兴趣的ChannelHandler。
   要想调用从某个特定的ChannelHandler开始的处理过程，必须获取到在(ChannelPipeline)该ChannelHandler之前的ChannelHandler所关联的
 ChannelHandelerContext。这个ChannelHandlerContext将调用和它所关联的ChannelHandler之后的ChannelHandler
+
+你可以调用ChannelHandlerContext上的pipeline()方法来获得被封闭的ChannelPipeline的引用。这使得运行时得以操作ChannelPipeline的
+ChannelHandler，我们可以利用这一点来实现一些复杂的的设计。例如，你可以通过将ChannelHandler添加到ChannelPipeline中来实现动态的
+协议转换。
+另一种高级的用法是缓存到ChannelHandlerContext的引用以供稍后使用，这可能会发生在任何的ChannelHandler方法之外，甚至来自于
+不同的
+因为一个ChannelHandler可以从属于多个ChannelPipeline,所以它也可以绑定到多个ChannelHandlerContext实例。对于这种用法指在多个
+ChannelPipeline中共享同一个ChannelHandler,对应的ChannelHandler必须要使用@Sharable注解标注;否则，试图将它添加到多个
+ChannelPipeline时将会触发异常。显而易见，为了安全地被用于多个并发的Channel(即连接),这样的ChannelHandler必须是线程安全的。
 ```
 
+异常处理
+- 处理入站异常
+- 处理出站异常
+
+```
+  你应该如何响应异常，可能很大程度上取决于你的应用程序。你可能想要关闭Channel(和连接)，也可能会尝试进行恢复。如果你不实现
+任何处理入站异常的逻辑(或者没有消费改异常)，那么Netty将会记录改异常没有被记录的事实。
+总结一下:
+   ChannelHandler.execptionCaught()的默认实现是简单地将当前异常转发给ChannelPipeline中的下一个ChannelHandler;
+   如果异常到达了ChannelPipeline的尾端，它将会被记录为未被处理；
+   要想定义自定义的处理逻辑，你需要重写exceptionCaught()方法。然后你需要决定是否需要将该异常传播出去
+   
+   
+  用于处理出站操作中的正常完成以及异常的选项，都基于以下的通知机制。
+每个出站操作都将返回一个ChannelFuture。注册到ChannelFuture的ChannelFutureListener将在操作完成时被通知该操作是成功了还是出错了。
+几乎所有的ChannelOutboundHandler上的方法都会传入一个ChannelPromise的实例。作为ChannelFuture的子类,ChannelPromise也可以被分配用于
+异步通知的监听器。但是,ChannelPromise还具有提供立即通知的可写方法:
+  ChannelPromise setSuccess();
+  ChannelPromise setFailure(Throwable cause);
+
+添加ChannelFutureListener只需要调用ChannelFuture实例上的addListener(ChannelFutureListener)方法，并且有2种不同的方式可以做到
+这一点。其中最常用的方式是，调用出站操作(如write()方法)所返回的ChannelFuture上的addListener()方法。
+```
 
 
 解码器
