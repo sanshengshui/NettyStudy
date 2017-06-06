@@ -237,3 +237,57 @@ CombinedChannelDuplexHandler类
 - 事件循环的概念和实现
 - 任务调度
 - 实现细节
+
+第8章
+子类的声明如下:
+
+```java
+public class Bootstrap
+   extends AbstractBootstrap<Bootstrap,Channel>
+```
+和
+```java
+public class ServerBootstrap
+   extends AbstractBootstrap<ServerBootstrap,ServerChannel>
+```
+
+引导客户端和无连接协议
+Bootstrap类被用于客户端或者使用了无连接协议的应用程序中。
+
+```
+   名称                                       描述
+Bootstrap group(EventLoopGroup)        设置用于处理Channel所有事件的EventLoopGroup
+                                       
+Bootstrap channel(                     channel()方法指定了Channel的实现类。如果该实现
+    class<?,extends c>)                类没提供默认的构造函数，可以通过调用channelFactory()
+Bootstrap channelFactory(              方法来指定一个工厂类,它将会被bind()方法调用
+    ChannelFactory<? extends C>)
+    
+Bootstrap localAddress(                指定Channel应该绑定到的本地地址。如果没有指定，则将由
+    SocketAddress)                     操作系统创建一个随机的地址。或者，也可以通过bind()或者
+                                       connect()方法指定localAddress
+    
+<T> Bootstrap option(                  设置ChannelOption,其将应用到每个新创建的Channel的
+    ChannelOption<T> option,           ChannelConfig。这些选项将会通过bind()或者connect()
+    T value)                           设置到Channel,不管哪个先被调用。这个方法在Channel已经
+                                       被创建后再调用将不会有任何的效果。支持的ChannelOption取决于
+                                       使用的Channel类型。
+                                       
+<T> Bootstrap attr(                    指定新创建的Channel的属性值。这些属性值是通过bind()或者
+    Attribute<T> key,T value)          connect()方法设置到Channel的。具体取决于谁最先被调用。这个
+                                       方法在Channel被创建后将不会有任何的效果
+ 
+Bootstrap                              设置将被添加到ChannelPipeline以接受事件通知的ChannelHandler
+handler(ChannelHandler)
+
+
+Bootstrap clone()                      创建一个当前Bootstrap的克隆,其具有和原始的Bootstrap相同的设置信息
+
+Bootstrap remoteAddress(               设置远程地址。或者，也可以通过connect()方法来指定它
+   SocketAddress)
+   
+ChannelFuture connect()                连接到远程节点并返回一个ChannelFuture,其将会在连接操作完成后接受到通知
+
+ChannelFuture bind()                   绑定Channel并返回一个ChannelFuture,其将会在绑定操作完成后接受到通知，
+                                        在那之后必须调用Channel.connect()方法来建立连接
+```
