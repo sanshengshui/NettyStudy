@@ -2,6 +2,24 @@
 <p align="center"><img src ="picture/logo.png" alt="Netty-Learning logo" /></p>
 
 ##Much effort,much prosperity
+
+进度如下<br>
+- [x] 【Netty in Action1】 异步和事件驱动
+- [x] 【Netty in Action2】 你的第一款Netty应用程序
+- [ ] 【Netty in Action3】 Netty的组件和设计
+- [ ] 【Netty in Action4】 传输
+- [ ] 【Netty in Action5】 ByteBuf
+- [ ] 【Netty in Action6】 ChannelHandler和ChannelPipeline
+- [ ] 【Netty in Action7】 EventLoop和线程
+- [ ] 【Netty in Action8】 引导
+- [ ] 【Netty in Action9】 单元测试
+- [ ] 【Netty in Action10】 编解码框架
+- [ ] 【Netty in Action11】 预置的ChannelHandler和编解码器
+- [ ] 【Netty in Action12】 WebSocket
+- [ ] 【Netty in Action13】 使用UDP广播事件
+- [ ] 【Netty in Action14】 案例研究，第一部分
+- [ ] 【Netty in Action15】 案例研究，第二部分
+
 ```
 在传统的Java应用中，通常使用以下4种方式进行跨节点通信。
 （1）通过RMI进行远程服务调用
@@ -9,6 +27,7 @@
 （3）利用一些开源的RPC框架进行远程服务调用，例如Facebook的Thrift,Apache的Avro等；
 （4）利用标准的共有协议进行跨节点服务调用，例如HTTP+XML.RESTful+JSON或者WebService.
 ```
+
 ##Netty协议栈功能设计<br/>
 ##协议栈功能描述<br/>
 Netty协议栈承载了业务内部各模块之间的消息交互和服务调用，它的主要功能如下。
