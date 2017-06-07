@@ -244,12 +244,12 @@ CombinedChannelDuplexHandler类
 第8章
 子类的声明如下:
 
-```java
+```
 public class Bootstrap
    extends AbstractBootstrap<Bootstrap,Channel>
 ```
 和
-```java
+```
 public class ServerBootstrap
    extends AbstractBootstrap<ServerBootstrap,ServerChannel>
 ```
