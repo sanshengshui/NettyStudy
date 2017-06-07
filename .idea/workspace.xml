@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92847a33-f337-41b0-8169-c85448bdb7c6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,8 +34,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1076">
-                <caret line="257" column="25" lean-forward="true" selection-start-line="257" selection-start-column="25" selection-end-line="257" selection-end-column="25" />
+              <first_editor relative-caret-position="19">
+                <caret line="1" column="37" lean-forward="false" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -44,8 +46,8 @@
       <file leaf-file-name="PerformTestUserInfo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/CoderAndDeCoder_of_NIO/SerializeAndDeserialize/PerformTestUserInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="266">
+              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -900,7 +902,7 @@
       <workItem from="1496625825892" duration="6613000" />
       <workItem from="1496657389752" duration="892000" />
       <workItem from="1496725049206" duration="302000" />
-      <workItem from="1496818987083" duration="1033000" />
+      <workItem from="1496818987083" duration="1224000" />
     </task>
     <task id="LOCAL-00001" summary="Google Protobuf编解码 Netty的Protobuf服务器和客户端开发 但是客户端有一个错误">
       <created>1493823429036</created>
@@ -918,7 +920,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126020000" />
+    <option name="totallyTimeSpent" value="126211000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1319,8 +1321,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/CoderAndDeCoder_of_NIO/SerializeAndDeserialize/PerformTestUserInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="266">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1328,8 +1330,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1076">
-            <caret line="257" column="25" lean-forward="true" selection-start-line="257" selection-start-column="25" selection-end-line="257" selection-end-column="25" />
+          <first_editor relative-caret-position="19">
+            <caret line="1" column="37" lean-forward="false" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
             <folding />
           </first_editor>
           <second_editor />

@@ -1,5 +1,5 @@
 # Netty-Learning
-<p align="center"><img src ="logo.png" alt="Netty-Learning logo" /></p>
+<p align="center"><img src ="picture/logo.png" alt="Netty-Learning logo" /></p>
 
 ##Much effort,much prosperity
 ```
