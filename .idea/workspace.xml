@@ -31,9 +31,9 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
+            <state split_layout="SPLIT">
               <first_editor relative-caret-position="380">
-                <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+                <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -904,7 +904,7 @@
       <workItem from="1496625825892" duration="6613000" />
       <workItem from="1496657389752" duration="892000" />
       <workItem from="1496725049206" duration="302000" />
-      <workItem from="1496818987083" duration="2891000" />
+      <workItem from="1496818987083" duration="3090000" />
     </task>
     <task id="LOCAL-00001" summary="Google Protobuf编解码 Netty的Protobuf服务器和客户端开发 但是客户端有一个错误">
       <created>1493823429036</created>
@@ -922,7 +922,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127878000" />
+    <option name="totallyTimeSpent" value="128077000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1335,9 +1335,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
+        <state split_layout="SPLIT">
           <first_editor relative-caret-position="380">
-            <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
             <folding />
           </first_editor>
           <second_editor />
