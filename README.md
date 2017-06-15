@@ -313,3 +313,8 @@ ChannelFuture connect()                连接到远程节点并返回一个Chann
 ChannelFuture bind()                   绑定Channel并返回一个ChannelFuture,其将会在绑定操作完成后接受到通知，
                                         在那之后必须调用Channel.connect()方法来建立连接
 ```
+
+引导客户端
+
+```
+```
