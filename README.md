@@ -314,7 +314,39 @@ ChannelFuture bind()                   绑定Channel并返回一个ChannelFuture
                                         在那之后必须调用Channel.connect()方法来建立连接
 ```
 
-引导客户端
+引导服务器
 
 ```
+名称                                              描述
+group                                  设置ServerBootstrap要用的EventLoopGroup。这个EventLoopGroup将用于ServerChannel
+                                       和被接受的子channel的I/O处理
+
+channel                                设置将要被实例化的ServerChannel类
+
+channelFactory                         如果不能通过默认的构造函数创建Channel,那么可以提供一个ChannelFactory
+
+localAddress                           指定ServerChannel应该绑定到的本地地址。如果没有指定，则将有操作系统使用一个随机地址。或者，
+                                       可以通过bind()方法来指定该localAddress
+
+option                                 指定要应用到新创建的ServerChannel的ChannelConfig的ChannelOption。这些选项将会通过bind()
+                                       方法设置到Channel。在bind()方法被调用之后，设置或者改变ChannelOption都不会有任何的效果。所支持
+                                       的ChannelOption都不会有任何的效果。所支持的ChannelOption取决于所使用的Channel类型。
+                                       
+childOption                            指定当子Channel被接受时，应用到子Channel的ChannelConfig的ChannelOption。所支持的ChannelOption
+                                       取决于所使用的Channel的类型。参见正在使用的ChannelConfig的API文档
+                                       
+attr                                   指定ServerChannel上的属性，属性将会通过bind()方法设置给Channel。在调用bind()方法之后改变它们将不会
+                                       有任何的效果
+                                       
+childAttr                              将属性设置给已经被接受的子Channel。接下来的调用将不会有任何的效果
+
+handler                                设置被添加给ServerChannel的ChannelPipeline中的ChannelHandler。
+
+childHandler                           设置将被添加到已将接受的子Channel的ChannelPipeline中的ChannelHandler。handler()方法和childHander()
+                                       方法之间的区别是:前者所添加的ChannelHandler由接受子Channel的ServerChannel处理，而childHandler()方法所
+                                       添加的ChannelHandler将由已被接受的子Channel处理，其代表一个绑定到远程节点的套接字
+                                       
+clone                                  克隆一个设置和原始的ServerBootstrap相同的ServerBootstrap
+
+bind                                   绑定ServerChannel并且返回一个ChannelFuture，其将会在绑定操作完成后收到通知(带着成功或者失败的结果)
 ```

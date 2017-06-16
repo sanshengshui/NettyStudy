@@ -17,11 +17,22 @@ import java.net.InetSocketAddress;
  * @description 不兼容的 Channnel 和 EventLoopGroup
  * @date 2017/6/15 9:26
  */
+
 public class InvalidBootstrapClient {
+
     /**
      * TODO reference
      * Channel和EventLoopGroup的兼容性
      * 必须保持这种兼容性，不能混用具有不同前缀的组件，如NioEventLoopGroup 和OioSocketChannel。
+     * 关于IllegalStateException的更多讨论
+     * 在引导的过程中，在调用bind()或者connect()方法之前，必须调用以下方法来设置所需的组件:
+     * group();
+     *
+     * channel()或者channelFactory();
+     *
+     * handler()
+     * 如果不这样做，则将会导致IllegalStateException。对handler()方法的调用尤其重要，因为它需要配置好
+     * channelPipeline。
      */
 
     public static void main(String args[]){
