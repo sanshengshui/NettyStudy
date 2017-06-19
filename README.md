@@ -350,3 +350,33 @@ clone                                  克隆一个设置和原始的ServerBoots
 
 bind                                   绑定ServerChannel并且返回一个ChannelFuture，其将会在绑定操作完成后收到通知(带着成功或者失败的结果)
 ```
+
+单元测试
+ChannelHandler是Netty应用程序的关键元素，所以彻底地测试它们应该是你的开发过程的一个标准部分。最佳实践要求你的测试不仅要能够证明你的实现是正确的，
+<br/>
+而且还要能够很容易地隔离那些因修改代码而突然出现的问题。这种类型的测试叫做单元测试。
+<br/>
+虽然单元测试没有统一的定义，但是大多数的从业者都有基本的共识。其基本思想是,以可能小的区块测试你的代码，并且尽可能地和其他的代码模块以及运行时的依赖
+<br/>
+(如数据库和网络)相隔离。如果你的应用程序能通过测试验证每个单元本身都能够正常的工作，那么在出了问题时将可以更加容易地找出根本原因。
+<br/>
+在本章中，我们将学习一种特殊的Channel实现--EmbeddedChannel,它是Netty专门为改进针对ChannelHandler的单元测试而提供的。
+<br/>
+因为正在被测试的代码模块或者单元将在它正常的运行时环境之外被执行，所以你需要一个框架或者脚手架以便在其中运行它。在我们的例子中。我们将使用JUnit4
+<br/>
+作为我们的测试框架，所以你需要对它的用法有一个基本的了解。如果它对你来说比较陌生，不要害怕；虽然它功能强大，但却很简单，
+
+```
+  Netty提供了它所谓的Embedded传输，用于测试ChannelHandler。这个传输是一种特殊的Channel实现 - -EmbeddedChannel- -的功能，这个实现提供了通过ChannelPineline
+传播事件的简便方法。
+  这个想法是直截了当的:将入站数据或者出站数据写入到EmbeddedChannnel中，然后检查是否有任何东西到达了ChannelPipeline的尾端。以这种方式，你便可以确定消息是否
+已经被编码或者被解码过了，以及是否触发了任何的ChannelHandler动作。
+下表列出了EmbeddedChannel的相关方法。
+名称                                                职责
+writeInbound(                            将入站信息写到EmbeddedChannel中。如果可以通过readInbound()方法从EmbeddedChannel中读取数据，则返回true
+     Object.....msgs)
+
+readInbound()                           从EmbeddedChannel中读取一个入站信息。任何返回的东西都穿越了整个ChannelPipeline。如果没有可供读取的东西，则返回null
+
+
+```
