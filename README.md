@@ -50,11 +50,15 @@ Netty的数据处理API通过倆个组件暴露- -abstract class ByteBuf和inter
 (7)支持引用计数;
 (8)支持池化。
 ```
-第6章 ChannelHandler和ChannelPipeline
+## ChannelHandler和ChannelPipeline
 <br/>
-6.1 ChannelHandler家族
+
+### ChannelHandler家族
+
 <br/>
-6.1.1 Channel的生命周期
+
+### Channel的生命周期
+
 <br/>
 Channel的四个状态:
 ```
@@ -66,7 +70,9 @@ Channel的四个状态:
 Channel的生命周期是:
 ChannelRegistered- - ->ChannelActive- ->ChannelInactive- ->ChannelUnregistered
 ```
-6.1.2ChannelHandler的生命周期
+
+### ChannelHandler的生命周期
+
 <br/>
 在ChannelHandler被添加到ChannelPipeline中或者被从ChannelPipeline中移除时会调用这些操作。这些方法中的每一个都接受一个
 <br/>
@@ -82,13 +88,21 @@ Netty定义了下面2个重要的ChannelHandler子接口:
 >+< ChannelInboundHandler - - -处理入站数据以及各种状态变化；
 >+< ChannelOutboundHandler - - -处理出站数据并且允许拦截所有的操作。
 ```
-6.1.3 ChannelInboundHandler接口
+
+### ChannelInboundHandler接口
+ 
 <br/>
-6.1.4 ChannelOutboundHandler接口
+
+### ChannelOutboundHandler接口
+
 <br/>
-6.1.5 ChannelHandler适配器
+
+###6.1.5 ChannelHandler适配器
+
 <br/>
-6.1.6 资源管理
+
+### 6.1.6 资源管理
+
 ```
   每当通过调用ChannelInboundHandler.channelRead()或者ChannelOutboundHandler.write()方法来处理数据时，你都需要确保没有任何的资源泄露
 。你可能还记得在前面的章节中所提到的，Netty使用引用计数来处理池化的ByteBuf。所以在完全使用完某个ByteBuf后,调整其引用计数是很重要的。
@@ -105,13 +119,13 @@ Netty提供了class ResourceLeakDetector,它将对你应用程序的缓冲区分
 泄露检测级别可以通过将下面的Java系统属性设置为表中的一个值来定义:
 java -Dio.netty.leakDetectionLevel=ADVANCED
 ```
-6.2 ChannelPipeLine接口
+ ChannelPipeLine接口
 ```
   每一个新创建的Channel都将会被分配一个新的ChannelPipeline。这项关联是永久性的;Channel既不能
 附加另外一个ChannelPipeline,也不能分离其当前的。在Netty组件的生命周期中，这是一项固定的操作，不需要
 开发人员的任何干预。
 ```
-6.3 ChannelHandlerContext接口
+ ChannelHandlerContext接口
 ```
   ChannelHandlerContext代表了ChannelHandler和ChannelPipeline之间的关联，每当有ChannelHandler
 添加到ChannelPipeline中时，都会创建ChannelHandlerContext。ChannelHandlerContext的主要功能是管理
@@ -225,7 +239,7 @@ List<Object> out)
 - 抽象类MessageToMessageEncoder
 <hr/>
 
-10.4抽象的编解码器类
+抽象的编解码器类
 <br/>
 抽象类ByteToMessageCodec                     
 
@@ -254,13 +268,13 @@ CombinedChannelDuplexHandler类
  public class CombinedChannelDuplexHandler
  <I extends ChannelInboundHandler,O extends ChannelOutboundHandler>
 ```
-第7章 EventLoop和线程模型
+ EventLoop和线程模型
 - 线程模型概述
 - 事件循环的概念和实现
 - 任务调度
 - 实现细节
 
-第8章
+
 子类的声明如下:
 
 ```
@@ -351,7 +365,7 @@ clone                                  克隆一个设置和原始的ServerBoots
 bind                                   绑定ServerChannel并且返回一个ChannelFuture，其将会在绑定操作完成后收到通知(带着成功或者失败的结果)
 ```
 
-单元测试
+## 单元测试
 ChannelHandler是Netty应用程序的关键元素，所以彻底地测试它们应该是你的开发过程的一个标准部分。最佳实践要求你的测试不仅要能够证明你的实现是正确的，
 <br/>
 而且还要能够很容易地隔离那些因修改代码而突然出现的问题。这种类型的测试叫做单元测试。
