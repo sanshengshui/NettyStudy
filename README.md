@@ -392,5 +392,15 @@ writeInbound(                            将入站信息写到EmbeddedChannel中
 
 readInbound()                           从EmbeddedChannel中读取一个入站信息。任何返回的东西都穿越了整个ChannelPipeline。如果没有可供读取的东西，则返回null
 
+writeOutbound(                          将出站消息写到EmbeddedChannel中。如果现在可以通过readOutbound()方法从EmbeddedChannel中读取到什么东西，则返回true
+     Object ... msgs)                  
 
+readOutbound()                          从EmbeddedChannel中读取一个出站消息。任何返回的东西都穿越了整个ChannelPipeline。如果没有任何可供读取的，则返回null
+
+finish()                                将EmbeddedChannel标记为完成，并且如果有可被读取的入站数据或者出站数据，则返回true。这个方法还将会调用EmbeddedChannel上的
+                                        close()方法
+
+
+    入站数据由ChannelInboundHandler处理，代表从远程节点读取的数据。出站数据由ChannelOutboundHandler处理，代表将要写到远程节点的数据
+根据你要测试的ChannelHandler,你将使用*Inbound()或者*Outbound(）方法对，或者兼而有之。
 ```
