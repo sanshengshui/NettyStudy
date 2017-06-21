@@ -12,7 +12,7 @@
 - [x] 【Netty in Action6】 ChannelHandler和ChannelPipeline
 - [x] 【Netty in Action7】 EventLoop和线程
 - [x] 【Netty in Action8】 引导
-- [ ] 【Netty in Action9】 单元测试
+- [x] 【Netty in Action9】 单元测试
 - [x] 【Netty in Action10】 编解码框架
 - [x] 【Netty in Action11】 预置的ChannelHandler和编解码器
 - [ ] 【Netty in Action12】 WebSocket
