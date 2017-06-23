@@ -410,8 +410,10 @@ finish()                                将EmbeddedChannel标记为完成，并�
 ```
 ## 预置的ChannelHandler和编解码器
 
+通过SSL/TLS保护Netty应用程序]
+
 ```
-   通过SSL/TLS保护Netty应用程序
+
    我们应该熟悉像SSL和TLS这样的安全协议，它们层叠在其他协议之上，用以实现数据安全。我们在访问安全网站时遇到过这些协议，
 但是它们也可用于其他不是基于HTTP的应用程序，如安全SMTP(SMTPS)邮件服务器甚至是关系型数据库。
    为了支持SSL/TLS,Java提供了Javax.net.ssl包，它的SSLContext和SSLEngine类使得实现解密和加密相当简单直接。Netty通过一个名
@@ -444,7 +446,19 @@ close()
 close(ChannelPromise)    
 close(ChannelHandlerContext,ChannelPromise)                      发送close_notify以请求关闭并销毁底层的SslEngine                                                             
 
-构建基于Netty的HTTP/HTTPS应用程序
 ```
-
+OpenSSL图：
 <p align="center"><img src ="picture/OpenSSL.PNG" alt="OpenSSL logo" /></p>
+
+<br/>
+<br/>
+构建基于Netty的HTTP/HTTPS应用程序
+
+```
+  HTTP是基于请求/响应模式的:客户端向服务器发送一个HTTP请求，然后服务器将会返回一个HTTP响应
+
+```
+HTTP请求图:
+<p align="center"><img src ="picture/HTTP-Request.PNG" alt="OpenSSL logo" /></p>
+HTTP响应图:
+<p align="center"><img src ="picture/HTTP-Reponse.PNG" alt="OpenSSL logo" /></p>
