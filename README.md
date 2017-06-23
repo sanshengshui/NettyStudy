@@ -97,11 +97,11 @@ Netty定义了下面2个重要的ChannelHandler子接口:
 
 <br/>
 
-###6.1.5 ChannelHandler适配器
+### ChannelHandler适配器
 
 <br/>
 
-### 6.1.6 资源管理
+###  资源管理
 
 ```
   每当通过调用ChannelInboundHandler.channelRead()或者ChannelOutboundHandler.write()方法来处理数据时，你都需要确保没有任何的资源泄露
@@ -422,7 +422,29 @@ finish()                                将EmbeddedChannel标记为完成，并�
    如果OpenSSL库可用，可以将Netty应用程序(客户端和服务器)配置为默认使用OpenSslEngine。如果不可用，Netty将会回退到JDK实现。
 有关配置OpenSSL支持的详细说明，参见Netty文档:
    注意,无论你使用JDK的SSLEngine还是使用Netty的OpenSslEngine,SSL API和数据流都是一致的。
+   在大多数情况下，SslHandler将是ChannelPipeline中的第一个ChannelHandler。这确保了只有在所有其他的ChannelHandler将它们的
+逻辑应用到数据上，才会进行加密。
+   SslHandler具有一些有用的方法，例如，在握手阶段，2个节点将相互验证并且商定一种加密方式。你可以通过配置SslHandler来修改
+它的行为，或者在SSL/TLS握手一旦完成之后提供通知，握手阶段完成之后，所有的数据都将会被加密，SSL/TLS握手将会被自动执行。
+                                    SslHandler的方法
+        方法名称                                                            描述
+setHandshakeTimeout(long,TimeUnit)                               设置和获取超时时间，超时之后，握手ChannelFuture将会
+setHandshakeTimeoutMillis(long)                                  被通知失败
+getHandshakeTimeoutMillis()
 
+setCloseNotifyTimeout(long,TimeUnit)                             设置和获取超时时间，超时之后，将会触发一个关闭通知并
+setCloseNotifyTimeoutMillis(long)                                关闭连接。这也将会导致通知该ChannelFuture失败
+getCloseNotifyTimeoutMillis()
+
+handshakeFuture()                                                返回一个在握手完成后将会得到通知的ChannelFuture.如果握手
+                                                                 先前已经执行过了,则返回一个包含了先前的握手结果的
+                                                                 ChannelFuture
+
+close()
+close(ChannelPromise)    
+close(ChannelHandlerContext,ChannelPromise)                      发送close_notify以请求关闭并销毁底层的SslEngine                                                             
+
+构建基于Netty的HTTP/HTTPS应用程序
 ```
 
 <p align="center"><img src ="picture/OpenSSL.PNG" alt="OpenSSL logo" /></p>
