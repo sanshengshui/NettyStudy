@@ -66,12 +66,14 @@ public class FixedLengthFrameDecoderTest {
         EmbeddedChannel channel = new EmbeddedChannel(
                 new FixedLengthFrameDecoder(3)
         );
+
         //返回false,因为没有一个完整的可供读取的帧
         assertFalse(channel.writeInbound(input.readBytes(2)));
         assertTrue(channel.writeInbound(input.readBytes(7)));
 
         assertTrue(channel.finish());
         ByteBuf read = (ByteBuf) channel.readInbound();
+
         assertEquals(buf.readSlice(3), read);
         read.release();
 

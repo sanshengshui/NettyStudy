@@ -408,3 +408,21 @@ finish()                                将EmbeddedChannel标记为完成，并�
     在每种情况下，消息都将会传递过ChannelPipeline,并且被相关的的ChannelInboundHandler或者ChannelOutboundHandler处理。如果消息没有被消费，那么你可以使用readInbound()
 或者readOutbound()方法来在处理过了这些消息之后，酌情把它们从Channel中读出来。
 ```
+## 预置的ChannelHandler和编解码器
+
+```
+   通过SSL/TLS保护Netty应用程序
+   我们应该熟悉像SSL和TLS这样的安全协议，它们层叠在其他协议之上，用以实现数据安全。我们在访问安全网站时遇到过这些协议，
+但是它们也可用于其他不是基于HTTP的应用程序，如安全SMTP(SMTPS)邮件服务器甚至是关系型数据库。
+   为了支持SSL/TLS,Java提供了Javax.net.ssl包，它的SSLContext和SSLEngine类使得实现解密和加密相当简单直接。Netty通过一个名
+为SslHandler的ChannelHandler实现利用了这个API,其中SslHanlder在内部使用SSLEngine来完成实际的工作。
+   Netty的OpenSSL/SSLEngine实现
+   Netty还提供了使用了OpenSSL工具包(www.openssl.org)的SSLEngine实现。这个OpenSslEngine类提供了比JDK提供的SSLEngine实现更
+好的性能。
+   如果OpenSSL库可用，可以将Netty应用程序(客户端和服务器)配置为默认使用OpenSslEngine。如果不可用，Netty将会回退到JDK实现。
+有关配置OpenSSL支持的详细说明，参见Netty文档:
+   注意,无论你使用JDK的SSLEngine还是使用Netty的OpenSslEngine,SSL API和数据流都是一致的。
+
+```
+
+<p align="center"><img src ="picture/OpenSSL.PNG" alt="OpenSSL logo" /></p>
