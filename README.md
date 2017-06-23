@@ -456,6 +456,18 @@ OpenSSL图：
 
 ```
   HTTP是基于请求/响应模式的:客户端向服务器发送一个HTTP请求，然后服务器将会返回一个HTTP响应
+                       HTTP解码器和编码器
+名称                                                        描述
+HttpRequestEncoder                          将HttpRequest,HttpContent和LastHttpContext消息解码为字节
+HttpResponseEncoder                         将HttpResponse,HttpContext和LastHttpContext消息解码为字节
+HttpRequestDecoder                          将字节解码为HttpRequest,HttpContext和LastHttpContext消息
+HttpResponseDecoder                         将字节解码为HttpResponse,HttpContext和LastHttpContext消息
+
+
+HTTP压缩
+  当使用HTTP时，建议开启压缩功能以尽可能多地减少传输数据的大小，虽然压缩会带来一些CPU时钟周期上的开销，但是通常来说
+它都是一个好主意，特别是对于文本数据来说
+  Netty为压缩和解压缩提供了ChannelHandler实现，它们同时支持gzip和deflate编码
 
 ```
 HTTP请求图:
