@@ -474,3 +474,30 @@ HTTP请求图:
 <p align="center"><img src ="picture/HTTP-Request.PNG" alt="OpenSSL logo" /></p>
 HTTP响应图:
 <p align="center"><img src ="picture/HTTP-Reponse.PNG" alt="OpenSSL logo" /></p>
+
+#### WebSocket
+
+```
+  WebSocket解决了一个长期存在的问题:既然底层的协议(HTTP)是一个请求/响应模式的交互序列，那么如何实时地发布消息呢?AJAX提供了
+一定程度上的改善，但是数据流任然是由客户端所发送的请求驱动的。还有其他的一些或多或少的取巧方式，但是最终它们任然属于扩展性受限的变
+通之法。
+  WebSocket规范以及它的实现代表了对一种更加有效的解决方案的尝试。简单地说，WebSocket提供了"在一个单个的TCP连接上提供双向的通信
+......结合WebSocketAPI......它为网页和远程服务器之间的双向通信提供了一种替代HTTP轮询的方案。  "
+  也就是说，WebSocket在客户端和服务器之间提供了真正的双向数据交换。我们不会深入地描述太多的内部细节，但是我们还是应该提到，尽管最早
+的实现仅限于文本数据，但是现在已经不是问题了；WebSocket现在可以用于传输任意类型的数据，很像普通的套接字。
+  
+  空闲的连接和超时
+  到目前为止，我们的讨论都集中在Netty通过专门的的编解码器和处理器对HTTP的变型HTTPS和WebSocket的支持上。只要你有效地管理你的网络资源，
+这些技术就可以使得你的应用更加高效,易用和安全。所以，让我们一起来探讨下首先需要关注的---连接管理吧。  
+                              用于空闲连接以及超时的ChannelHandler
+  名称                                                  描述
+IdleStateHandler                    当连接空闲时间太长时，将会触发一个IdleStateEvent事件。然后，你可以通过在你的ChannelInbound
+                                    Handler中重写userEventTriggered()方法来处理该IdleStateEvent事件
+                                    
+ReadTimeoutHandler                  如果在指定的时间间隔内没有收到任何的入站数据，则抛出一个ReadTimeoutException并关闭对应的Channel
+                                    。可以通过重写你的ChannelHandler中的exceptionCaught()方法来检测该ReadTimeOutException
+                                    
+WriteTimeoutHandler                  如果在指定的时间间隔内没有任何出站数据写入，则抛出一个WriteTimeoutException并关闭对应的Channel
+                                     。可以通过重写你的ChannelHandler的exceptionCaught()方法检测该WriteTimeoutException
+
+```
