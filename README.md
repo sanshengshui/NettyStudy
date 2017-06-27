@@ -501,7 +501,7 @@ WriteTimeoutHandler                  如果在指定的时间间隔内没有任�
                                      。可以通过重写你的ChannelHandler的exceptionCaught()方法检测该WriteTimeoutException                               
 ```
 
-#### 基于分割符的协议
+#### 基于分割符的协议和基于长度的协议
 
 ```
    基于分隔符的消息协议使用定义的字符来标记的消息或者消息段(通常被称为帧)的开头或者结尾。由RFC文档正式定义的许多协议(如SMTP,POP3,IMAP
@@ -510,5 +510,12 @@ WriteTimeoutHandler                  如果在指定的时间间隔内没有任�
                 用于处理基于分隔符的协议和基于长度的协议的解码器
 名称                                                描述
 DelimiterBasedFrameDecoder                  使用任何由用户提供的分隔符来提取帧的通用解码器
-LineBasedFrameDecoder                       提取由行尾符(\n或者\r\n)分隔的帧的解码器。这个解码器比DelimiterBasedFrameDecoder更快                
+LineBasedFrameDecoder                       提取由行尾符(\n或者\r\n)分隔的帧的解码器。这个解码器比DelimiterBasedFrameDecoder更快 
+                
+   基于长度的协议通过将它的长度编码到帧的头部来定义帧，而不是使用特殊的分隔符来标记它的结束。表中列出了Netty提供的用于处理这种类型的协议的
+2中解码器
+                 用于基于长度的协议的解码器
+名称                                                 描述
+FixedLengthFrameDecoder                      提取在调用构造函数时指定的定长帧
+LengthFieldBasedFrameDecoder                 根据编码进帧头部中的长度值提取帧；该字段的偏移量以及长度在构造函数中指定
 ```
