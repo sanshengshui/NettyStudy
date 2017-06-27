@@ -498,6 +498,17 @@ ReadTimeoutHandler                  如果在指定的时间间隔内没有收�
                                     。可以通过重写你的ChannelHandler中的exceptionCaught()方法来检测该ReadTimeOutException
                                     
 WriteTimeoutHandler                  如果在指定的时间间隔内没有任何出站数据写入，则抛出一个WriteTimeoutException并关闭对应的Channel
-                                     。可以通过重写你的ChannelHandler的exceptionCaught()方法检测该WriteTimeoutException
+                                     。可以通过重写你的ChannelHandler的exceptionCaught()方法检测该WriteTimeoutException                               
+```
 
+#### 基于分割符的协议
+
+```
+   基于分隔符的消息协议使用定义的字符来标记的消息或者消息段(通常被称为帧)的开头或者结尾。由RFC文档正式定义的许多协议(如SMTP,POP3,IMAP
+以及Telnet)都是这样的。此外，当然，私有组织通常也拥有他们自己的专有格式，无论你使用什么样的协议，表中列出的解码器都能帮助你定义可以提取由
+任意标记(token)序列分隔的帧的自定义解码器。
+                用于处理基于分隔符的协议和基于长度的协议的解码器
+名称                                                描述
+DelimiterBasedFrameDecoder                  使用任何由用户提供的分隔符来提取帧的通用解码器
+LineBasedFrameDecoder                       提取由行尾符(\n或者\r\n)分隔的帧的解码器。这个解码器比DelimiterBasedFrameDecoder更快                
 ```

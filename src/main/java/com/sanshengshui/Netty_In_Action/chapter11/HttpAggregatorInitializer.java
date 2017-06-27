@@ -14,6 +14,7 @@ import io.netty.handler.codec.http.HttpServerCodec;
  * @date 2017/6/23
  */
 public class HttpAggregatorInitializer extends ChannelInitializer<Channel>{
+
     private final boolean isClient;
 
     public HttpAggregatorInitializer(boolean isClient){
