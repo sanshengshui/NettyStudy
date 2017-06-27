@@ -501,7 +501,7 @@ WriteTimeoutHandler                  如果在指定的时间间隔内没有任�
                                      。可以通过重写你的ChannelHandler的exceptionCaught()方法检测该WriteTimeoutException                               
 ```
 
-#### 基于分割符的协议和基于长度的协议
+#### 基于分割符的协议+基于长度的协议+写大型数据
 
 ```
    基于分隔符的消息协议使用定义的字符来标记的消息或者消息段(通常被称为帧)的开头或者结尾。由RFC文档正式定义的许多协议(如SMTP,POP3,IMAP
@@ -518,4 +518,7 @@ LineBasedFrameDecoder                       提取由行尾符(\n或者\r\n)分�
 名称                                                 描述
 FixedLengthFrameDecoder                      提取在调用构造函数时指定的定长帧
 LengthFieldBasedFrameDecoder                 根据编码进帧头部中的长度值提取帧；该字段的偏移量以及长度在构造函数中指定
+
+因为网络饱和的可能性，如果在异步框架中高效地写大块的数据是一个特殊的问题。由于写操作是非阻塞的，所以即使没有写出所有的数据，写操作也会在完成时
+返回并通知ChannelFuture。当这种情况发生时，如果任然不停地写入，就有内存耗尽的风险。所以在写大型数据时，
 ```
