@@ -520,5 +520,19 @@ FixedLengthFrameDecoder                      提取在调用构造函数时指�
 LengthFieldBasedFrameDecoder                 根据编码进帧头部中的长度值提取帧；该字段的偏移量以及长度在构造函数中指定
 
 因为网络饱和的可能性，如果在异步框架中高效地写大块的数据是一个特殊的问题。由于写操作是非阻塞的，所以即使没有写出所有的数据，写操作也会在完成时
-返回并通知ChannelFuture。当这种情况发生时，如果任然不停地写入，就有内存耗尽的风险。所以在写大型数据时，
+返回并通知ChannelFuture。当这种情况发生时，如果任然不停地写入，就有内存耗尽的风险。所以在写大型数据时，需要准备好处理到远程节点的连接是
+慢速连接的情况,这种情况会导致内存释放的延迟。让我们考虑下将一个文件内容写到网络的情况。
+   在我们讨论传输的过程中，提到了NIO的零拷贝特性，这种特性消除了将文件的内容从文件系统移动到网络栈的复制过程。所有的这一切都发生在Netty
+的核心中，所以应用程序所有需要做的就是使用一个FileRegion接口的实现，其在Netty的API文档中定义是: "通过支持零拷贝的文件传输的Channel来发送的
+文件区域"  
+   关键是interface ChunkedInput<B>,其中类型参数B是readChunk()方法返回的类型。Netty预置了该接口的4个实现，每个都代表了一个将由Chunked
+-WriteHandler处理的不定长度的数据流。
+   下表中说明了ChunkedStream的用法，它是实践中最常用的实现。所示的类使用了一个File以及一个SslContext进行实例化。当initChannel()方法被
+调用时，它将使用所示的ChannelHandler链初始化该Channel。
+                                ChunkedInput的实现
+名称                                           描述
+ChunkedFile                     从文件中逐块获取数据，当你的平台不支持零拷贝或者你需要转换数据时使用
+ChunkedNioFile                  和ChunkedFile类似，只是它使用了FileChannel
+ChunkedStream                   从InputStream中逐块传输内容
+ChunkedNioStream                从ReadableByteChannel中逐块传输内容               
 ```
