@@ -15,7 +15,7 @@
 - [x] 【Netty in Action9】 单元测试
 - [x] 【Netty in Action10】 编解码框架
 - [x] 【Netty in Action11】 预置的ChannelHandler和编解码器
-- [ ] 【Netty in Action12】 WebSocket
+- [x] 【Netty in Action12】 WebSocket
 - [ ] 【Netty in Action13】 使用UDP广播事件
 - [ ] 【Netty in Action14】 案例研究，第一部分
 - [ ] 【Netty in Action15】 案例研究，第二部分
