@@ -547,8 +547,18 @@ ChunkedNioStream                从ReadableByteChannel中逐块传输内容
   虽然已经有了一些关于正式定义实时Web服务语义的学术讨论，但是被普通接受的定义似乎还未出现。因此现在我们将采纳下面来自维基百科的非权威性描述：
   实时Web利用技术和实践，使用户在信息的作者发布信息之后就能够立即收到信息，而不需要他们或者他们的软件周期性地检查信息源以获取更新。
   简而言之，虽然全面的实时Web可能并不会马上到来，但是它背后的想法却助长了对于几乎瞬间获得信息的期望。我们将在本章中讨论的WebSocket协议
-便是在这个方向上迈出的坚实的一步。  
+便是在这个方向上迈出的坚实的一步。 
+  由IETF发布的WebSocketRFC,定义了6种帧，Netty为它们每种都提供了一个POJO实现。下表中列出了这些帧类型，并描述了它们的用法。
+                                 WebSocketFrame的类型
+  帧类型                                                     描述
+BinaryWebSocketFrame                                 包含了二进制数据
+TextWebSocketFrame                                   包含了文本数据
+ContinuationWebSocketFrame                           包含属于上一个BinaryWebSocketFrame或TextWebSocketFrame的文本数据或者二进制数据
+CloseWebSocketFrame                                  表示一个CLOSE请求，包含一个关闭的状态码和关闭的原因
+PingWebSocketFrame                                   请求传输一个PongWebSocketFrame
+PongWebSocketFrame                                   作为一个对于PingWebSocketFrame的响应被发送                                  
 ```
+
 下图说明了该应用程序的逻辑:<br/>
 (1)客户端发送一个消息；<br/>
 (2)该消息将被广播到所有其他连接的客户端。<br/>
