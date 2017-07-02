@@ -556,7 +556,32 @@ TextWebSocketFrame                                   包含了文本数据
 ContinuationWebSocketFrame                           包含属于上一个BinaryWebSocketFrame或TextWebSocketFrame的文本数据或者二进制数据
 CloseWebSocketFrame                                  表示一个CLOSE请求，包含一个关闭的状态码和关闭的原因
 PingWebSocketFrame                                   请求传输一个PongWebSocketFrame
-PongWebSocketFrame                                   作为一个对于PingWebSocketFrame的响应被发送                                  
+PongWebSocketFrame                                   作为一个对于PingWebSocketFrame的响应被发送   
+
+通过安装所有必需的ChannelHandler来设置该新注册的Channel的ChannelPipeline。这些ChannelHandler以及它们各自的职责都被总结在了下表中。
+                           基于WebSocket聊天服务器的ChannelHandler
+ChannelHandler                                                  职责
+HttpServerCodec                                    将字节解码到HttpRequest,HttpContent和LastHttpContent。并将HttpRequest,Http
+                                                   Content和LastHttpContent编码为字节
+ChunkedWriteHandler                                写入一个文件的内容
+HttpObjectAggregator                               将一个HttpMessage和跟随它的多个HttpContent聚合为单个FullHttpRequest或者Full
+                                                   HttpResponse(取决于它是被用于处理请求还是响应）。安装了这个之后，ChannelPipeline
+                                                   中的下一个ChannelHander将只会收到完整的HTTP请求或响应
+HttpRequestHandler                                 处理FullHttpRequest(那些不发送到/wsURI的请求）
+TextWebSocketFrameHandler                          处理TextWebSocketFrame和握手完成事件                                                   
+                                                   
+  Netty的WebSocketServerProtocolHandler处理了所有委托管理的WebSocket帧类型以及升级握手本身。如果握手成功，那么所需的ChannelHandler 
+将会被添加到ChannelPipeline中，而那些不在需要的ChannelHandler则将会被移除。
+  WebSocket协议升级之前的ChannelPipeline的状态，这代表了刚刚被ChatServerInitializer初始化之后的ChannelPipeline.
+                                                      ChannelPipeline
+HttpRequestDecoder  HttpResponseEncoder HttpObjectAggregator HttpRequestHandler WebSocketProtocolHandler TextWebSocketFrameHandler
+  当WebSocket协议升级完成之后，WebSocketServerProtocolHandler将会把HttpRequestDecoder替换为WebSocketFrameDecoder,把HttpResponse
+Encoder替换为WebSocketFrameEncoder。为了性能最大化，它将移除任何不在被WebSocket连接所需要的ChannelHandler。这也包括了所示的HttpObject
+Aggregator和HttpRequestHandler。
+  下图展示了这些操作完成之后的ChannelPipeline。需要注意的是，Netty目前支持4个版本的WebSocket协议，它们每个都具有自己的实现类。Netty将会
+根据客户端(这里值浏览器)所支持的版本，自动地选择正确版本的WebSocketFrameDecoder和WebSocketFrameEncoder  
+                                                    ChannelPipeline
+WebSocketFrameDecoder13 WebSocketFrameEncoder13 WebSocketServerProtocolHandler TextWebSocketFrameHandler                                                    
 ```
 
 下图说明了该应用程序的逻辑:<br/>
