@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92847a33-f337-41b0-8169-c85448bdb7c6" name="Default" comment="" />
+    <list default="true" id="92847a33-f337-41b0-8169-c85448bdb7c6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/SecureChatServer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/SecureChatServerInitializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,15 +30,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatServer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/ChatServer.java">
+      <file leaf-file-name="SecureChatServer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/SecureChatServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="68" column="61" lean-forward="false" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
+            <state relative-caret-position="349">
+              <caret line="33" column="27" lean-forward="true" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2185#2312#0" expanded="true" />
-                <element signature="e#2311#2312#0" expanded="true" />
+                <element signature="e#678#679#0" expanded="true" />
+                <element signature="e#716#717#0" expanded="true" />
+                <element signature="e#1733#1861#0" expanded="true" />
+                <element signature="e#1860#1861#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecureChatServerInitializer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/SecureChatServerInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,8 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter02/chapter10/ToIntegerDecoder2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter02/chapter10/IntegerToStringDecoder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter02/chapter10/TooLongFrameException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter02/chapter10/SafeByteToMessageDecoder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter10/WebSocketConvertHandler.java" />
@@ -124,6 +140,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/ChatServerInitializer.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/ChatServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/SecureChatServerInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/SecureChatServer.java" />
       </list>
     </option>
   </component>
@@ -156,10 +174,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="496" />
-    <option name="y" value="2" />
+    <option name="x" value="54" />
+    <option name="y" value="-8" />
     <option name="width" value="1874" />
-    <option name="height" value="1092" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -282,40 +300,6 @@
               <option name="myItemId" value="Netty_Souce_Analysis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="worldclock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NettyStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NettyStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sanshengshui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Netty_Souce_Analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -378,20 +362,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Netty_In_Action" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NettyStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NettyStudy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picture" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1263,7 +1233,10 @@
       <workItem from="1498887483432" duration="582000" />
       <workItem from="1498972724534" duration="8713000" />
       <workItem from="1498986233871" duration="1917000" />
-      <workItem from="1498993516524" duration="1722000" />
+      <workItem from="1498993516524" duration="1756000" />
+      <workItem from="1499039907354" duration="2360000" />
+      <workItem from="1499048374163" duration="207000" />
+      <workItem from="1499073235016" duration="1195000" />
     </task>
     <task id="LOCAL-00001" summary="Google Protobuf编解码 Netty的Protobuf服务器和客户端开发 但是客户端有一个错误">
       <created>1493823429036</created>
@@ -1302,7 +1275,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270076000" />
+    <option name="totallyTimeSpent" value="273872000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1314,7 +1287,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="496" y="2" width="1874" height="1092" extended-state="0" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1332,7 +1305,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11546961" sideWeight="0.49137932" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17016575" sideWeight="0.49137932" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1427,34 +1400,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter10/WebSocketConvertHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="50" column="42" lean-forward="false" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter08/InvalidBootstrapClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/netty-in-action-cn-ChineseVersion/chapter8/src/main/java/nia/chapter8/BootstrapSharingEventLoopGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter08/BootstrapServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter08/BootstrapSharingEventLoopGroup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -1738,7 +1683,6 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="71">
             <caret line="546" column="16" lean-forward="true" selection-start-line="546" selection-start-column="16" selection-end-line="546" selection-end-column="16" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1756,7 +1700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1764,18 +1707,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="33" column="63" lean-forward="false" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/netty-in-action-cn-ChineseVersion/chapter12/src/main/java/nia/chapter12/SecureChatServerInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/netty-in-action-cn-ChineseVersion/chapter12/src/main/java/nia/chapter12/SecureChatServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/ChatServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="68" column="61" lean-forward="false" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
+        <state relative-caret-position="493">
+          <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2185#2312#0" expanded="true" />
             <element signature="e#2311#2312#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/SecureChatServerInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter12/SecureChatServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="33" column="27" lean-forward="true" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#1733#1861#0" expanded="true" />
+            <element signature="e#1860#1861#0" expanded="true" />
           </folding>
         </state>
       </provider>
