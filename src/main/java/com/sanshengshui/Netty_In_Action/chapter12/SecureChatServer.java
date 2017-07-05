@@ -17,8 +17,10 @@ import java.security.cert.CertificateException;
  * @description 向ChatServer添加加密
  * @date 2017/7/3 17:17:21
  */
+
 public class SecureChatServer extends ChatServer {
     private final SslContext context;
+
     public SecureChatServer(SslContext context){
         this.context = context;
     }
