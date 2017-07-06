@@ -643,7 +643,12 @@ interface DatagramChannel                       扩展了Netty的Channel抽象�
        extends Channel    
 class NioDatagramChannel                        定义了一个能够发送和接受AddressedEnvelope消息的Channel类型
       extends AbstractNioMessageChannel
-      implements DatagramChannel                                                                                           
+      implements DatagramChannel  
+
+Netty的DatagramPacket是一个简单的消息容器，DatagramChannel实现用它来和远程节点通信。类似于在我们先前的类比中的明信片，它包含了接受
+者(和可选的发送者)的地址以及消息的有效负载本身。
+   要将LogEvent消息转换为DatagramPacket,我们将需要一个编码器。但是没有必要从头开始编写我们自己的。我们将扩展Netty的MessageToMessage
+Encoder。                                                                                              
   
 ```
 <p align="center"><img src ="picture/UDP.PNG" alt="UDP" /></p>
