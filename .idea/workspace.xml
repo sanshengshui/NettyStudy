@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92847a33-f337-41b0-8169-c85448bdb7c6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEventEncoder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEventBroadcaster.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,13 +52,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogEventEncoder.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEventEncoder.java">
+      <file leaf-file-name="LogEventBroadcaster.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEventBroadcaster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="43">
+              <caret line="46" column="42" lean-forward="true" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2233#2234#0" expanded="true" />
+                <element signature="e#2275#2276#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogEventEncoder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEventEncoder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+              <folding>
                 <element signature="e#685#686#0" expanded="true" />
                 <element signature="e#735#736#0" expanded="true" />
               </folding>
@@ -100,7 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter10/WebSocketConvertHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter10/ByteToCharDecoder.java" />
         <option value="$USER_HOME$/Desktop/netty-in-action-cn-ChineseVersion/chapter6/src/main/java/nia/chapter6/WriteHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter06/WriteHandler.java" />
@@ -151,6 +162,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEvent.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEventEncoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEventBroadcaster.java" />
       </list>
     </option>
   </component>
@@ -183,8 +195,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="56" />
-    <option name="y" value="19" />
+    <option name="x" value="364" />
     <option name="width" value="1874" />
     <option name="height" value="1084" />
   </component>
@@ -1218,7 +1229,7 @@
       <workItem from="1499231160791" duration="1564000" />
       <workItem from="1499245606049" duration="4986000" />
       <workItem from="1499304283101" duration="1669000" />
-      <workItem from="1499318199301" duration="7972000" />
+      <workItem from="1499318199301" duration="12622000" />
     </task>
     <task id="LOCAL-00001" summary="Google Protobuf编解码 Netty的Protobuf服务器和客户端开发 但是客户端有一个错误">
       <created>1493823429036</created>
@@ -1257,7 +1268,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="309978000" />
+    <option name="totallyTimeSpent" value="314628000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1269,7 +1280,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="56" y="19" width="1874" height="1084" extended-state="0" />
+    <frame x="364" y="0" width="1874" height="1084" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1287,7 +1298,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15856354" sideWeight="0.49137932" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18508287" sideWeight="0.49137932" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1382,20 +1393,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter08/BootstrapDatagramChannel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter08/GracefulShutdown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Google_Protobuf_CoderAndDecoder/SubscribeRespProto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-152">
@@ -1720,6 +1717,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/netty-in-action-cn-ChineseVersion/chapter13/src/main/java/nia/chapter13/LogEventEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="69" lean-forward="true" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEventEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+          <folding>
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1728,14 +1744,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEventEncoder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter13/LogEventBroadcaster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="43">
+          <caret line="46" column="42" lean-forward="true" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#2233#2234#0" expanded="true" />
+            <element signature="e#2275#2276#0" expanded="true" />
           </folding>
         </state>
       </provider>
