@@ -594,6 +594,7 @@ WebSocketFrameDecoder13 WebSocketFrameEncoder13 WebSocketServerProtocolHandler T
 ## 使用UDP广播事件
 
 ```
+
   UDP的基础知识
   面向连接的传输(如TCP)管理了2个网络端点之间的连接的建立，在连接的生命周期内的有序和可靠的消息传输，以及最后，连接的有序终止。相比之下，
 在类似于UDP这样的无连接协议中，并没有持久化连接这样的概念,并且每个消息(一个UDP数据报)都是一个单独的传输单元。
@@ -624,5 +625,25 @@ WebSocketFrameDecoder13 WebSocketFrameEncoder13 WebSocketServerProtocolHandler T
   所有的在该UDP端口上监听的事件监视器都将会接受到广播消息。
   为了简单起见，我们将不会为我们的示例程序添加身份认证，验证或者加密。但是，要加入这些功能并使得其成为一个健壮的，可用的实用程序应该也不
 难。  
+  编写广播者
+  Netty提供了大量的类来支持UDP应用程序的编写。表13-1列出了我们将要使用的主要的消息容器以及Channel类型。
+                                        在广播者中使用的Netty的UDP相关类
+名称                                                    描述                                        
+interface AddressedEnvelope                     定义一个消息，其包装了另一个消息并带有发送者和接受者地址。其中M是消息类型；A是地址
+        <M,A extends SocketAddress>             类型
+        extends ReferenceCounted
+class DefaultAddressedEnvelope                  提供了interface AddressedEnvelope的默认实现
+        <M,A extends SocketAddress>
+        implements AddressedEnvelope<M,A>     
+class DatagramPacket                            扩展了DefaultAddressedEnvelope以使用ButeBuf作为消息数据容器
+      extends DefaultAddressedEnvelope
+      <ByteBuf,InetSocketAddress>
+      implements ByteBufHolder 
+interface DatagramChannel                       扩展了Netty的Channel抽象以支持UDP的多播组管理
+       extends Channel    
+class NioDatagramChannel                        定义了一个能够发送和接受AddressedEnvelope消息的Channel类型
+      extends AbstractNioMessageChannel
+      implements DatagramChannel                                                                                           
+  
 ```
 <p align="center"><img src ="picture/UDP.PNG" alt="UDP" /></p>
