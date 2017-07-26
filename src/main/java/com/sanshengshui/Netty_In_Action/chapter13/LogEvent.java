@@ -4,6 +4,9 @@ import java.net.InetSocketAddress;
 
 /**
  * @ClassName LogEvent
+ *
+ *
+ *
  * @author 穆书伟
  * @description LogEvent消息
  * @date 2017/7/6 13:48
