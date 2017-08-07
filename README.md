@@ -18,7 +18,7 @@
 - [x] 【Netty in Action12】 WebSocket
 - [x] 【Netty in Action13】 使用UDP广播事件
 - [x] 【Netty in Action14】 案例研究，第一部分
-- [ ] 【Netty in Action15】 案例研究，第二部分
+- [x] 【Netty in Action15】 案例研究，第二部分
 
 ```
 在传统的Java应用中，通常使用以下4种方式进行跨节点通信。
