@@ -23,24 +23,24 @@ public class NettyMessageEncoder extends MessageToMessageEncoder<NettyMessage> {
 
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, NettyMessage nettyMessage, List<Object> list) throws Exception {
-        if(nettyMessage == null || nettyMessage.getHeader() == null)
-            throw new Exception("The encode message is null");
-        ByteBuf sendBuf= Unpooled.buffer();
-        sendBuf.writeInt((nettyMessage.getHeader().getCrcCode()));
-        sendBuf.writeInt((nettyMessage.getHeader().getLength()));
-        sendBuf.writeLong((nettyMessage.getHeader().getSessionID()));
-        sendBuf.writeByte((nettyMessage.getHeader().getType()));
-        sendBuf.writeByte((nettyMessage.getHeader().getPriority()));
-        sendBuf.writeInt((nettyMessage.getHeader()).getAttachment().size());
-        String key = null;
-        byte[] keyArray = null;
-        for(Map.Entry<String,Object> param:nettyMessage.getHeader().getAttachment().entrySet()){
-            key= param.getKey();
-            keyArray =key.getBytes("UTF-8");
-            sendBuf.writeInt(keyArray.length);
-            sendBuf.writeBytes(keyArray);
-
-        }
+//        if(nettyMessage == null || nettyMessage.getHeader() == null)
+//            throw new Exception("The encode message is null");
+//        ByteBuf sendBuf= Unpooled.buffer();
+//        sendBuf.writeInt((nettyMessage.getHeader().getCrcCode()));
+//        sendBuf.writeInt((nettyMessage.getHeader().getLength()));
+//        sendBuf.writeLong((nettyMessage.getHeader().getSessionID()));
+//        sendBuf.writeByte((nettyMessage.getHeader().getType()));
+//        sendBuf.writeByte((nettyMessage.getHeader().getPriority()));
+//        sendBuf.writeInt((nettyMessage.getHeader()).getAttachment().size());
+//        String key = null;
+//        byte[] keyArray = null;
+//        for(Map.Entry<String,Object> param:nettyMessage.getHeader().getAttachment().entrySet()){
+//            key= param.getKey();
+//            keyArray =key.getBytes("UTF-8");
+//            sendBuf.writeInt(keyArray.length);
+//            sendBuf.writeBytes(keyArray);
+//
+//        }
 
 
 
