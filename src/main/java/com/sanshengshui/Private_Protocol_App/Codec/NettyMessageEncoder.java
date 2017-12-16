@@ -23,6 +23,7 @@ public class NettyMessageEncoder extends MessageToMessageEncoder<NettyMessage> {
 
     @Override
     protected void encode(ChannelHandlerContext channelHandlerContext, NettyMessage nettyMessage, List<Object> list) throws Exception {
+
 //        if(nettyMessage == null || nettyMessage.getHeader() == null)
 //            throw new Exception("The encode message is null");
 //        ByteBuf sendBuf= Unpooled.buffer();
