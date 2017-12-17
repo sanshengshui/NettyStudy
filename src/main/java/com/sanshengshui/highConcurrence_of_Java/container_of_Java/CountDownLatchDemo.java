@@ -3,6 +3,10 @@ package com.sanshengshui.highConcurrence_of_Java.container_of_Java;
 import java.util.Random;
 import java.util.concurrent.*;
 
+/**
+ * @author 穆书伟
+ * @description 这个工具通常用来控制线程等待，它可以让某一个线程等待直到倒计时结束，再开始执行
+ */
 public class CountDownLatchDemo implements Runnable{
     static final CountDownLatch end = new CountDownLatch(10);
     static  final CountDownLatchDemo demo = new CountDownLatchDemo();

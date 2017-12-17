@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92847a33-f337-41b0-8169-c85448bdb7c6" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CountDownLatchDemo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CyclicBarrierDemo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/ThreadLocal.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanshengshui/Private_Protocol_App/Codec/NettyMessageEncoder.java" afterPath="$PROJECT_DIR$/src/main/java/com/sanshengshui/Private_Protocol_App/Codec/NettyMessageEncoder.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CountDownLatchDemo.java" afterPath="$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CountDownLatchDemo.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,21 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ThreadPoolDemo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/highConcurrence_of_Java/ThreadPool/ThreadPoolDemo.java">
+      <file leaf-file-name="CyclicBarrierDemo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CyclicBarrierDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CountDownLatchDemo.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CountDownLatchDemo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+            <state relative-caret-position="951">
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,12 +44,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RejectThreadPoolDemo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/highConcurrence_of_Java/ThreadPool/RejectThreadPoolDemo.java">
+      <file leaf-file-name="ThreadLocal.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/ThreadLocal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="48" lean-forward="false" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-              <folding />
+            <state relative-caret-position="252">
+              <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#483#501#0" expanded="true" />
+                <element signature="e#890#891#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountDownLatchDemo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CountDownLatchDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,8 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter08/BootstrapServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter08/BootstrapWithInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter08/BootstrapSharingEventLoopGroup.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter08/BootstrapDatagramChannel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter08/GracefulShutdown.java" />
@@ -147,6 +153,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/highConcurrence_of_Java/ThreadPool/MyThreadFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/Private_Protocol_App/Codec/NettyMessageEncoder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CountDownLatchDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CyclicBarrierDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/ThreadLocal.java" />
       </list>
     </option>
   </component>
@@ -176,10 +184,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="598" />
-    <option name="y" value="13" />
+    <option name="x" value="509" />
+    <option name="y" value="33" />
     <option name="width" value="1874" />
-    <option name="height" value="1084" />
+    <option name="height" value="1081" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -199,9 +207,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -253,7 +260,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sanshengshui" type="462c0819:PsiDirectoryNode" />
               <item name="highConcurrence_of_Java" type="462c0819:PsiDirectoryNode" />
-              <item name="ThreadPool" type="462c0819:PsiDirectoryNode" />
+              <item name="container_of_Java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NettyStudy" type="b2602c69:ProjectViewProjectNode" />
@@ -296,6 +303,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,7 +338,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CountDownLatchDemo">
+  <component name="RunManager" selected="Application.ThreadLocal">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -395,6 +403,25 @@
       <module name="nettystudy" />
       <envs />
     </configuration>
+    <configuration name="ThreadLocal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.sanshengshui.highConcurrence_of_Java.container_of_Java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.sanshengshui.highConcurrence_of_Java.container_of_Java.ThreadLocal" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="nettystudy" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -416,31 +443,6 @@
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
       <setting name="depsClasspath" value="false" />
-    </configuration>
-    <configuration name="FixedLengthFrameDecoderTest.testFramesDecoded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.sanshengshui.Netty_In_Action.chapter09.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="nettystudy" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.sanshengshui.Netty_In_Action.chapter09.test" />
-      <option name="MAIN_CLASS_NAME" value="com.sanshengshui.Netty_In_Action.chapter09.test.FixedLengthFrameDecoderTest" />
-      <option name="METHOD_NAME" value="testFramesDecoded" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
     </configuration>
     <configuration name="FrameChunkDecoderTest.testFramesDecoded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -1006,18 +1008,18 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.NettystudyApplication" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.FrameChunkDecoderTest.testFramesDecoded" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.FixedLengthFrameDecoderTest.testFramesDecoded" />
-      <item index="3" class="java.lang.String" itemvalue="Application.DivTask" />
-      <item index="4" class="java.lang.String" itemvalue="Application.ExtThreadPool" />
-      <item index="5" class="java.lang.String" itemvalue="Application.CountDownLatchDemo" />
+      <item index="2" class="java.lang.String" itemvalue="Application.DivTask" />
+      <item index="3" class="java.lang.String" itemvalue="Application.ExtThreadPool" />
+      <item index="4" class="java.lang.String" itemvalue="Application.CountDownLatchDemo" />
+      <item index="5" class="java.lang.String" itemvalue="Application.ThreadLocal" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.CountDownLatchDemo" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ExtThreadPool" />
-        <item index="2" class="java.lang.String" itemvalue="Application.DivTask" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.FrameChunkDecoderTest.testFramesDecoded" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.FixedLengthFrameDecoderTest.testFramesDecoded" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ThreadLocal" />
+        <item index="1" class="java.lang.String" itemvalue="Application.CountDownLatchDemo" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ExtThreadPool" />
+        <item index="3" class="java.lang.String" itemvalue="Application.DivTask" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FrameChunkDecoderTest.testFramesDecoded" />
       </list>
     </recent_temporary>
   </component>
@@ -1183,7 +1185,9 @@
       <workItem from="1513328866246" duration="3282000" />
       <workItem from="1513399901565" duration="1871000" />
       <workItem from="1513401917139" duration="746000" />
-      <workItem from="1513412396994" duration="2741000" />
+      <workItem from="1513412396994" duration="5979000" />
+      <workItem from="1513422636971" duration="21000" />
+      <workItem from="1513507170205" duration="6215000" />
     </task>
     <task id="LOCAL-00001" summary="Google Protobuf编解码 Netty的Protobuf服务器和客户端开发 但是客户端有一个错误">
       <created>1493823429036</created>
@@ -1206,7 +1210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513329793058</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="倒计时器:countDownLatch">
+      <created>1513418877403</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1513418877403</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1236,7 +1247,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="406609000" />
+    <option name="totallyTimeSpent" value="416083000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1248,7 +1259,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="598" y="13" width="1874" height="1084" extended-state="0" />
+    <frame x="509" y="33" width="1874" height="1081" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1258,13 +1269,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286638" sideWeight="0.42324093" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21864595" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31088665" sideWeight="0.57675904" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58189654" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16442953" sideWeight="0.57675904" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.236404" sideWeight="0.4827586" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17258601" sideWeight="0.4827586" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1272,8 +1283,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18508287" sideWeight="0.51724136" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18508287" sideWeight="0.51724136" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1353,7 +1364,8 @@
     <MESSAGE value="Google Protobuf编解码 Netty的Protobuf服务器和客户端开发 但是客户端有一个错误" />
     <MESSAGE value="Java高并发程序设计一些领悟和笔记" />
     <MESSAGE value="调整错误" />
-    <option name="LAST_COMMIT_MESSAGE" value="调整错误" />
+    <MESSAGE value="倒计时器:countDownLatch" />
+    <option name="LAST_COMMIT_MESSAGE" value="倒计时器:countDownLatch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1364,20 +1376,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/Netty_In_Action/chapter11/ProtoBufInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="37" lean-forward="true" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/CoderAndDeCoder_of_NIO/SerializeAndDeserialize/TestUserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/CoderAndDeCoder_of_NIO/SerializeAndDeserialize/UserInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-161">
@@ -1685,12 +1683,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CountDownLatchDemo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CyclicBarrierDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        <state relative-caret-position="951">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/CountDownLatchDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sanshengshui/highConcurrence_of_Java/container_of_Java/ThreadLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#483#501#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
           </folding>
         </state>
       </provider>
