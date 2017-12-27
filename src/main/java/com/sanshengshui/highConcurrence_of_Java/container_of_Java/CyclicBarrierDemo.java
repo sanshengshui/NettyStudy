@@ -5,7 +5,11 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
+ * @date 2017年12月27日 下午17:07
  * @author 穆书伟
+ * @description 循环栅栏:CyclicBarrier
+ * CyclicBarrier是另外一种多线程并发控制实用工具。和CountDownLatch非常类似，它也可以实现线程间的计数等待，但
+ * 它的功能比CountDownLatch更加复杂且强大。
  *
  */
 public class CyclicBarrierDemo {
@@ -73,6 +77,9 @@ public class CyclicBarrierDemo {
             System.out.println("士兵 "+ i + "报道!");
             allSoldier[i] = new Thread(new Soldier(cyclic,"士兵"+i));
             allSoldier[i].start();
+            if(i==5){
+                allSoldier[0].interrupt();
+            }
         }
 
     }
